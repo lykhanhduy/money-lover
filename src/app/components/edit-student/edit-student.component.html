@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="col-md-4 add-dm">
+        <h2 class="alert alert-success">Sửa thông tin sinh viên</h2>
+    </div>
+    <div class="clearfix"></div>
+    <form (ngSubmit)="onSubmit(formEditStudent);" #formEditStudent = "ngForm">
+      <div class="form">
+        <table class="table">
+            <tr>
+              <td><p>Họ tên</p></td>
+              <td><input type="text" name="hoten" [(ngModel)] = "hoten" class="form-control" ></td>
+            </tr>
+            <tr>
+                <td><p>Lớp</p></td>
+                <td><input type="text" name="lop" [(ngModel)] = "lop" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><p>Khoa</p></td>
+                <td><input type="text" name="khoa" [(ngModel)] = "khoa" class="form-control"></td>
+              </tr>
+            <tr>
+            <tr>
+                <td><p>Ngày sinh</p></td>
+                <td><input type="text" name="ngaysinh" [(ngModel)] = "ngaysinh" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><p>Quê quán</p></td>
+                <td><input type="text" name="quequan" [(ngModel)] = "quequan" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><p>Image</p></td>
+              <td><input type="file" name="anhdaidien" #fileInput class="form-control" ><span>{{anhdaidien}}</span><img src="./assets/img/{{anhdaidien}}" /></td>
+            </tr>
+
+        </table>
+      </div>
+      <div class="col-md-3 form-group pull-right">
+         <input type="submit" name="ok" value="saves" class="btn btn-primary btn-block">
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="row">
+      <h2 class="alert alert-success col-sm-4">Danh sách Học Sinh</h2>
+      <div class="col-sm-6"></div>
+      <button class="btn btn-success col-sm-2" style="margin-top:40px" (click)="themHocSinh()">Thêm Học Sinh</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Lớp</th>
+        <th>Khoa</th>
+        <th>Ngày sinh</th>
+        <th>Quê quán</th>
+        <th>Ảnh đại diện</th>
+        <th>Action</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ student.hoten }}</td>
+        <td>{{ student.lop }}</td>
+        <td>{{ student.khoa }}</td>
+        <td>{{ student.ngaysinh }}</td>
+        <td>{{ student.quequan }}</td>
+        <td><img src="/assets/img/{{student.anhdaidien}}" style="width:130px;height:100px"></td>
+        
+        <td>
+        <a routerLink="/edit-student/{{student._id}}" class="btn btn-primary a-btn-slide-text">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <span><strong>Edit</strong></span>
+        </a>
+        </td>
+        <td>
+          <a
+          mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteStudent(student._id)"
+          (cancel)="cancelClicked = true"  class="btn btn-danger a-btn-slide-text">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <span><strong>Delete</strong></span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><!--end .content-->

@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="col-md-4 add-dm">
+        <h2 class="alert alert-success">Thêm Học Sinh</h2>
+    </div>
+    <div class="clearfix"></div>
+    <form (ngSubmit)="onSubmit(formAddStudent);" #formAddStudent = "ngForm">
+      <div class="form">
+        <table class="table">
+            <tr>
+              <td><p>Họ Tên</p></td>
+              <td><input type="text" name="hoten" ngModel #hoten="ngModel" class="form-control" ></td>
+            </tr>
+            <tr>
+                <td><p>Lớp</p></td>
+                <td><input type="text" name="lop" ngModel #lop="ngModel" class="form-control"></td>
+              </tr>
+            <tr>
+              <td><p>Khoa</p></td>
+              <td><input type="text" name="khoa" ngModel #khoa="ngModel" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><p>Ngày sinh</p></td>
+                <td><input type="text" name="ngaysinh" ngModel #ngaysinh="ngModel" class="form-control"></td>
+              </tr>
+            <tr>
+              <td><p>Image</p></td>
+              <td><input type="file" name="anhdaidien" #fileInput class="form-control" ></td>
+            </tr>
+            <tr>
+              <td>Quê quán</td>
+              <td><input type="text" name="quequan" ngModel #quequan="ngModel" class="form-control"></td>
+            </tr>
+        </table>
+      </div>
+      <div class="col-md-3 form-group pull-right">
+         <input type="submit" name="ok" value="saves" class="btn btn-primary btn-block">
+      </div>
+    </form>
+  </div>
