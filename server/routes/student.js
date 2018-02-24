@@ -67,7 +67,7 @@ router.post('/student', (req, res) => {
             res.send(err) ;
         }
         else {
-            console.log('student saved ' + data);
+            res.send(data);
         }
     });
 });
@@ -82,7 +82,7 @@ router.delete('/student/:id', function (req, res, next) {
             res.send(err);
         }
         else {
-            console.log('deleted' + data)
+            res.send(data);
         }
     });
 });

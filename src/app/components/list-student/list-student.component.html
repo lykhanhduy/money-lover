@@ -40,7 +40,7 @@
           [popoverTitle]="popoverTitle"
           [popoverMessage]="popoverMessage"
           placement="left"
-          (confirm)="deleteStudent(student._id)"
+          (click)="deleteStudent(student._id)"
           (cancel)="cancelClicked = true"  class="btn btn-danger a-btn-slide-text">
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           <span><strong>Delete</strong></span>

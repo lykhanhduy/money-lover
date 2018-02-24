@@ -21,20 +21,22 @@ export class ListStudentComponent implements OnInit {
     this.studentService.getListStudent()
     .subscribe(data => {
       this.students = data;
-      console.log(data);
     });
 
   }
   deleteStudent (id) {
     this.studentService.deleteStudent(id)
-    .subscribe(() => {
-      console.log(id);
-      console.log(this.students[0]._id);
-      for (let i = 0; i < this.students.length; i++) {
-        if ( this.students[i]._id === id ) {
-          this.students.splice(i, 1);
+    .subscribe(data => {
+        for (let i = 0; i < this.students.length; i++) {
+          if ( this.students[i]._id === <any>id ) {
+            this.students.splice(i, 1);
+          }
         }
-      }
     });
   }
-  themH
+  themHocSinh() {
+    this._router.navigate(['/add-student']);
+  }
+
+
+}
